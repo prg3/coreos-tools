@@ -1,0 +1,20 @@
+{ "hosts": 
+	[ 
+	{ "hostname": "coreos01" ,
+	"public_ip": "192.168.0.230",
+	"private_ip": "192.168.0.230"
+	},
+	{"hostname": "coreos02",
+	"public_ip": "192.168.0.231",
+	"private_ip": "192.168.0.231"
+	}
+	],
+ "common":
+	{ "etcd2key" : "a9630123f51814718792781e7b658b85",
+	"sshkey" : [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqGX7cxg2pDxb5Ru+HkefmamffB1GjEelRVI6YDXdrO3xgZTb1G7KOrmPt6WmpJkZmt6IwXTSFU9DrBtFa1QQTRBSmQgzUftlSw7YOcsoHp3a3jAjBgxKbihksXDiyr0vX+Jrdb5WmEDJaMzwrTJbWGRGqzq5hA6NQ7MKVtZNAsfhPot3dJ/XCmFHoH5ItysFrpZMey/OCcY26yeMb8P/fk05A8swmogGiT6GMqmcJuN5v7iasccP3E2wgo37LOjuf840DT7GSVjHjmXkjRwXFo7J3KpXC4ObjtKvGjkf4HijwlWn59kmk7CKndXq/ceEBGeNecYvpjWgFI4gbBKb3 prg3@essex", "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxSwqMjc9nEJjBjtwWUjR/eTVgRYW65ofiQoFylqVeik5riolqQ33eFYgNp+sKGychfNRE2Hg2bR5NS/V4XuMs8YYWsLnP2Inx6KPwJztJ9fH8uA1hc0tSLpCr5PcnQ2K/NDZ+eR+MHkIMBIKmFcS2ALsp8JmKtVHlTg+X5j784IMyE1DuxipvE7mWKM/t76R6vkM5MmRGXt8NQrLmRtx/J4UQ77iAF1HbRaeSNyeUzX37Jf+k2D1pE0MpaU/wUtXNZOVjUvZbvAHHX8L6K2FtO4p4rgSYZOhZTZ/IuEoc4d7gvmOq+K7cLpLOvLZllV/nLqz+YPJVspCMW7baFBN7w== prg3@paullt"],
+	"region" : "ganeti",
+	"network" : "192.168.0.0/24",
+	"gateway" : "192.168.0.1",
+	"dns" : "192.168.0.1,8.8.8.8"
+	}
+}
