@@ -15,21 +15,21 @@ common = host_data['common']
 
 sshString = ""
 for key in common['sshkey']:
-	sshString += " - %s\n" %(key)
+	sshString += " - \"%s\"\n" %(key)
 
-if not os.path.exists("template/openstack/latest"):
-	os.makedirs("template/openstack/latest")
 	
 
 FNULL = open(os.devnull, 'w')
 
 for host in hosts:
+	if not os.path.exists("%s/openstack/latest"%(host['hostname'])):
+		os.makedirs("%s/openstack/latest"%(host['hostname']))
 	print "\tCreating for %s"%(host['hostname'])
 	fh = open("cloud-init.template",'r')
 	s = Template(fh.read())
 	fh.close()
 
-	fh = open("template/openstack/latest/user_data",'w')
+	fh = open("%s/openstack/latest/user_data"%(host['hostname']),'w')
 	newtemplate = s.substitute(
 		publicip=host['public_ip'],
 		privateip=host['private_ip'],
@@ -44,5 +44,5 @@ for host in hosts:
 	fh.write(newtemplate)
 	fh.close()
 	# mkisofs -R -V config-2 -o ../configdrive.iso `pwd`
-	sp = subprocess.Popen(["mkisofs","-R","-V config-2","-oconfigdrive-%s.iso"%(host['hostname']), "template"], stdin=None, stdout=FNULL, stderr=subprocess.STDOUT)
+	sp = subprocess.Popen(["mkisofs","-R","-Vconfig-2","-oconfigdrive-%s.iso"%(host['hostname']), "%s"%(host['hostname']) ], stdin=None, stdout=FNULL, stderr=subprocess.STDOUT)
 

@@ -30,7 +30,7 @@ coreos:
 
       [Network]
       DNS=$dns
-      Address=$network
+      Address=$publicip
       Gateway=$gateway
 
 ssh_authorized_keys:
